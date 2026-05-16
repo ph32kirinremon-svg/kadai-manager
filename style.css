@@ -280,105 +280,84 @@ button {
   border: none;
 }
 
-/* スマホ */
+/* ===== スマホ対応 ===== */
 @media (max-width: 768px) {
 
-  .calendar-day {
-    min-height: 80px;
-    font-size: 12px;
+  body {
+    margin: 5px;
   }
 
-  .calendar-task {
-    font-size: 10px;
-  }
-}
-
-/* 今日の日 */
-.today {
-  background-color: #d9d9d9;
-  border: 2px solid #888;
-}
-
-/* 完了課題 */
-.completed-task {
-  background-color: #cfcfcf;
-  color: #666;
-  text-decoration: line-through;
-}
-
-/* 曜日色 */
-.sunday {
-  color: red;
-}
-
-.saturday {
-  color: blue;
-}
-
-/* 日曜マス */
-.sunday-day {
-  background-color: #ffe5e5;
-}
-
-/* 土曜マス */
-.saturday-day {
-  background-color: #e5eeff;
-}
-
-/* 課題詳細 */
-.task-detail {
-  background: white;
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: left;
-  border: 2px solid #ddd;
-}
-
-.detail-task {
-  background: #f3f3f3;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 8px;
-}
-
-/* スマホ対応 */
-@media (max-width: 768px) {
-
-  #calendar {
-    gap: 2px;
+  h1 {
+    font-size: 18px;
   }
 
-  .week-name {
-    font-size: 12px;
-    padding: 6px;
+  /* テーブル横スクロール */
+  #timetable {
+    overflow-x: auto;
+    display: block;
+    white-space: nowrap;
   }
 
-  .calendar-day {
-    min-height: 70px;
-    font-size: 11px;
-    padding: 3px;
-  }
-
-  .calendar-task {
-    font-size: 9px;
+  /* マスを小さく */
+  th,
+  td {
+    width: 125px;
+    min-width: 125px;
+    height: 180px;
     padding: 2px;
   }
 
-  .calendar-date {
+  /* 曜日 */
+  th {
     font-size: 12px;
+    padding: 4px;
   }
 
-  .task-detail {
+  /* 授業名 */
+  .subject-input {
+    font-size: 11px;
+    padding: 4px;
+  }
+
+  /* 課題入力 */
+  .task-input {
     width: 95%;
-    box-sizing: border-box;
-    font-size: 14px;
+    font-size: 11px;
+    padding: 4px;
   }
 
-  /* スマホボタン */
+  /* 締切 */
+  .deadline-input {
+    width: 95%;
+    max-width: none;
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  /* Enter文字 */
+  .enter-text {
+    font-size: 8px;
+  }
+
+  /* 課題ボックス */
+  .task {
+    margin: 3px;
+    padding: 4px;
+    font-size: 10px;
+  }
+
+  .task-title {
+    font-size: 11px;
+  }
+
+  .task-deadline {
+    font-size: 9px;
+  }
+
+  /* ボタン小さく */
   button {
-    width: auto;
-    font-size: 14px;
+    width: 90%;
+    font-size: 10px;
+    padding: 4px;
   }
 }
