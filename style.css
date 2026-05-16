@@ -1,0 +1,326 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 10px;
+  background: #f5f7fb;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+/* 横スクロール対応 */
+table {
+  border-collapse: collapse;
+  margin: 20px auto;
+  overflow-x: auto;
+}
+
+#timetable {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+th,
+td {
+  border: 2px solid #333;
+  width: 180px;
+  min-width: 180px;
+  height: 260px;
+  vertical-align: top;
+  background: white;
+}
+
+/* 曜日 */
+th {
+  background: #dbe8ff;
+  padding: 8px;
+}
+
+/* 授業名 */
+.subject-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #dfefff;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/* 課題入力 */
+.task-input {
+  width: calc(100% - 12px);
+  margin-top: 6px;
+  padding: 5px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* 日時入力 */
+.deadline-input {
+  width: calc(100% - 12px);
+  max-width: 150px;
+  margin-top: 6px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* Enter説明 */
+.enter-text {
+  font-size: 10px;
+  color: gray;
+  margin-top: 4px;
+}
+
+/* 課題一覧 */
+.cell {
+  margin-top: 10px;
+}
+
+/* 課題ボックス */
+.task {
+  background: #f3f3f3;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  margin: 6px;
+  padding: 8px;
+}
+
+/* 課題名 */
+.task-title {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* 締切 */
+.task-deadline {
+  font-size: 11px;
+  color: #555;
+  margin-top: 4px;
+}
+
+/* 完了 */
+.done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/* ボタン共通 */
+button {
+  font-size: 12px;
+  margin-top: 6px;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+/* 完了ボタン */
+.done-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* 削除ボタン */
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* 締切5時間前 */
+.warning {
+  background-color: #ffb3b3;
+  border: 2px solid red;
+}
+
+/* 期限切れ */
+.expired {
+  background-color: #ddd;
+}
+
+/* ===== スマホ対応 ===== */
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 20px;
+  }
+
+  th,
+  td {
+    width: 160px;
+    min-width: 160px;
+    height: 250px;
+  }
+
+  .deadline-input {
+    max-width: 130px;
+    font-size: 12px;
+  }
+
+  button {
+    width: 90%;
+  }
+}
+
+/* カレンダー */
+#calendar {
+  max-width: 700px;
+  margin: auto;
+}
+
+.calendar-task {
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  margin: 12px;
+  padding: 15px;
+}
+
+/* ===== ページ移動ボタン ===== */
+.calendar-btn,
+.back-btn {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 20px;
+  background: #4a7dff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* ===== カレンダー ===== */
+#calendar {
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+.calendar-task {
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  margin: 12px;
+  padding: 15px;
+}
+
+/* 入力欄の崩れ防止 */
+.task-input,
+.deadline-input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.deadline-input {
+  width: 140px;
+  min-width: 140px;
+}
+
+/* ===== カレンダー ===== */
+
+.calendar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 20px;
+}
+
+#calendar {
+  display: grid;
+  grid-template-columns:
+    repeat(7, 1fr);
+
+  gap: 5px;
+
+  width: 95%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.week-name {
+  background: #dbe8ff;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.calendar-day {
+  background: white;
+  border: 1px solid #bbb;
+  min-height: 120px;
+  padding: 5px;
+  text-align: left;
+  border-radius: 8px;
+}
+
+.calendar-date {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.calendar-task {
+  background: #dfefff;
+  margin-top: 4px;
+  padding: 4px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.empty {
+  background: transparent;
+  border: none;
+}
+
+/* スマホ */
+@media (max-width: 768px) {
+
+  .calendar-day {
+    min-height: 80px;
+    font-size: 12px;
+  }
+
+  .calendar-task {
+    font-size: 10px;
+  }
+}
+
+/* 今日の日 */
+.today {
+  background-color: #d9d9d9;
+  border: 2px solid #888;
+}
+
+/* 完了課題 */
+.completed-task {
+  background-color: #cfcfcf;
+  color: #666;
+  text-decoration: line-through;
+}
+
+/* 曜日色 */
+.sunday {
+  color: red;
+}
+
+.saturday {
+  color: blue;
+}
+
+/* 日曜マス */
+.sunday-day {
+  background-color: #ffe5e5;
+}
+
+/* 土曜マス */
+.saturday-day {
+  background-color: #e5eeff;
+}
