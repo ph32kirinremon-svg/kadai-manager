@@ -324,3 +324,61 @@ button {
 .saturday-day {
   background-color: #e5eeff;
 }
+
+/* 課題詳細 */
+.task-detail {
+  background: white;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: left;
+  border: 2px solid #ddd;
+}
+
+.detail-task {
+  background: #f3f3f3;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+
+  #calendar {
+    gap: 2px;
+  }
+
+  .week-name {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .calendar-day {
+    min-height: 70px;
+    font-size: 11px;
+    padding: 3px;
+  }
+
+  .calendar-task {
+    font-size: 9px;
+    padding: 2px;
+  }
+
+  .calendar-date {
+    font-size: 12px;
+  }
+
+  .task-detail {
+    width: 95%;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
+  /* スマホボタン */
+  button {
+    width: auto;
+    font-size: 14px;
+  }
+}
