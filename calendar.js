@@ -166,6 +166,48 @@ function renderCalendar() {
       }
     });
 
+    // 日付クリック
+dayBox.onclick = () => {
+
+  const dayTasks =
+    tasks.filter(task => {
+
+      const deadline =
+        new Date(task.deadline);
+
+      return (
+        deadline.getFullYear() === year &&
+        deadline.getMonth() === month &&
+        deadline.getDate() === day
+      );
+    });
+
+  if (dayTasks.length === 0) {
+
+    taskDetail.innerHTML =
+      `<h3>${month + 1}月${day}日</h3>
+       <p>課題なし</p>`;
+
+    return;
+  }
+
+  let html =
+    `<h3>${month + 1}月${day}日</h3>`;
+
+  dayTasks.forEach(task => {
+
+    html += `
+      <div class="detail-task">
+        <strong>${task.name}</strong><br>
+        締切：
+        ${task.deadline.replace("T", " ")}
+      </div>
+    `;
+  });
+
+  taskDetail.innerHTML = html;
+};
+
     calendar.appendChild(dayBox);
   }
 }
