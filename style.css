@@ -23,6 +23,7 @@ table {
 }
 
 th,
+/* マス（課題入力部分） */
 td {
   border: 2px solid #333;
   width: 180px;
@@ -32,10 +33,15 @@ td {
   background: white;
 }
 
-/* 曜日 */
+/* 曜日・何限 */
 th {
+  border: 2px solid #333;
   background: #dbe8ff;
-  padding: 8px;
+  width: 70px;
+  min-width: 70px;
+  height: 40px;
+  padding: 4px;
+  font-size: 14px;
 }
 
 /* 授業名 */
@@ -301,9 +307,10 @@ button {
   /* マスを小さく */
   th,
   td {
-    width: 90px;
-    min-width: 90px;
-    height: 120px;
+    width: 45px;
+    min-width: 45px;
+    height: 30px;
+    font-size: 10px;
     padding: 2px;
   }
 
