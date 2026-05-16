@@ -281,7 +281,7 @@ button {
 }
 
 /* ===== スマホ対応 ===== */
-@media (max-width: 768px) {
+@media (max-width: 430px) {
 
   body {
     margin: 5px;
