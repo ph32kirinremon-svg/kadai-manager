@@ -1,6 +1,9 @@
 const calendar =
   document.getElementById("calendar");
 
+const taskDetail =
+  document.getElementById("taskDetail");
+
 const monthTitle =
   document.getElementById("monthTitle");
 
