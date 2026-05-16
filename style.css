@@ -130,6 +130,7 @@ button {
 
 /* 完了ボタン */
 .done-btn {
+  width: 2px;
   background-color: #4CAF50;
   color: white;
   border: none;
@@ -138,6 +139,7 @@ button {
 
 /* 削除ボタン */
 .delete-btn {
+  width: 3px;
   background-color: #f44336;
   color: white;
   border: none;
