@@ -388,3 +388,32 @@ button {
   min-width: 110px;
   height: 165px;
 }
+
+/* ===== カレンダー曜日 ===== */
+.week-name {
+  background: #dbe8ff;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* 日曜 */
+.week-name.sunday {
+  color: red;
+}
+
+/* 土曜 */
+.week-name.saturday {
+  color: blue;
+}
+
+/* 日曜マス */
+.sunday-day {
+  background-color: #ffe5e5;
+}
+
+/* 土曜マス */
+.saturday-day {
+  background-color: #e5eeff;
+}
