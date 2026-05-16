@@ -122,28 +122,30 @@ table {
 
 /* ボタン共通 */
 button {
-  font-size: 12px;
-  margin-top: 6px;
-  padding: 5px 8px;
-  border-radius: 5px;
+  font-size: 10px;
+  margin-top: 4px;
+  padding: 3px 6px;
+  border-radius: 4px;
 }
 
 /* 完了ボタン */
 .done-btn {
-  width: 2px;
   background-color: #4CAF50;
   color: white;
   border: none;
   cursor: pointer;
+  font-size: 10px;
+  padding: 3px 6px;
 }
 
 /* 削除ボタン */
 .delete-btn {
-  width: 3px;
   background-color: #f44336;
   color: white;
   border: none;
   cursor: pointer;
+  font-size: 10px;
+  padding: 3px 6px;
 }
 
 /* 締切5時間前 */
