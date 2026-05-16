@@ -301,9 +301,9 @@ button {
   /* マスを小さく */
   th,
   td {
-    width: 125px;
-    min-width: 125px;
-    height: 180px;
+    width: 110px;
+    min-width: 110px;
+    height: 160px;
     padding: 2px;
   }
 
