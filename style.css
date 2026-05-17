@@ -402,26 +402,6 @@ button {
   text-align: center;
 }
 
-/* 日曜 */
-.week-name.sunday {
-  color: red;
-}
-
-/* 土曜 */
-.week-name.saturday {
-  color: blue;
-}
-
-/* 日曜マス */
-.sunday-day {
-  background-color: #ffe5e5;
-}
-
-/* 土曜マス */
-.saturday-day {
-  background-color: #e5eeff;
-}
-
 /* ===== カレンダー全体 ===== */
 #calendar {
   display: grid;
@@ -511,4 +491,25 @@ button {
     font-size: 8px;
     padding: 1px 2px;
   }
+}
+
+
+/* 日曜 */
+.week-name.sunday {
+  color: red;
+}
+
+/* 土曜 */
+.week-name.saturday {
+  color: blue;
+}
+
+/* 日曜マス */
+.sunday-day {
+  background-color: #ffe5e5;
+}
+
+/* 土曜マス */
+.saturday-day {
+  background-color: #e5eeff;
 }
