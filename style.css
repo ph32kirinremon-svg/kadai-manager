@@ -349,6 +349,37 @@ button {
   border-radius: 8px;
 }
 
+/* ===== 時間割スクロール ===== */
+#timetable {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: 100%;
+  border-collapse: collapse;
+}
+
+/* ===== 上の曜日固定 ===== */
+#timetable thead th {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: #dbe8ff;
+}
+
+/* ===== 左の何限固定 ===== */
+#timetable tbody th {
+  position: sticky;
+  left: 0;
+  z-index: 20;
+  background: #dbe8ff;
+}
+
+/* 左上の空白セル */
+#timetable thead th:first-child {
+  left: 0;
+  z-index: 40;
+}
+
 /* ===== スマホ対応 ===== */
 @media (max-width: 768px) {
 
