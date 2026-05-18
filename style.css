@@ -20,40 +20,28 @@ table {
   display: block;
   overflow-x: auto;
   white-space: nowrap;
-  max-width: 100%;
 }
 
-/* 上の曜日固定 */
-#timetable thead th {
-  position: sticky;
-  top: 0;
-  z-index: 30;
-}
-
-/* ===== 時間割の曜日・何限 ===== */
-#timetable th {
+th,
+/* マス（課題入力部分） */
+td {
   border: 2px solid #333;
-  background: #dbe8ff;
-
-  width: 55px;
-  min-width: 55px;
-  height: 35px;
-
-  padding: 4px;
-  font-size: 13px;
-  text-align: center;
-}
-
-/* ===== 時間割の課題マス ===== */
-#timetable td {
-  border: 2px solid #333;
-
   width: 180px;
   min-width: 180px;
   height: 260px;
-
   vertical-align: top;
   background: white;
+}
+
+/* 曜日・何限 */
+th {
+  border: 2px solid #333;
+  background: #dbe8ff;
+  width: 70px;
+  min-width: 70px;
+  height: 40px;
+  padding: 4px;
+  font-size: 14px;
 }
 
 /* 授業名 */
@@ -131,10 +119,10 @@ table {
 
 /* ボタン共通 */
 button {
-  font-size: 10px;
-  margin-top: 4px;
-  padding: 3px 6px;
-  border-radius: 4px;
+  font-size: 12px;
+  margin-top: 6px;
+  padding: 5px 8px;
+  border-radius: 5px;
 }
 
 /* 完了ボタン */
@@ -143,8 +131,6 @@ button {
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 10px;
-  padding: 3px 6px;
 }
 
 /* 削除ボタン */
@@ -153,8 +139,6 @@ button {
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 10px;
-  padding: 3px 6px;
 }
 
 /* 締切5時間前 */
@@ -167,24 +151,7 @@ button {
 .expired {
   background-color: #ddd;
 }
-/* ===== 1〜4限を固定 ===== */
 
-#timetable th:first-child {
-  position: sticky;
-  left: 0;
-  z-index: 20;
-
-  background: #dbe8ff;
-}
-
-/* 左端の何限セル */
-#timetable tbody th {
-  position: sticky;
-  left: 0;
-  z-index: 10;
-
-  background: #dbe8ff;
-}
 /* ===== スマホ対応 ===== */
 @media (max-width: 768px) {
 
@@ -319,8 +286,71 @@ button {
   border: none;
 }
 
+/* スマホ */
+@media (max-width: 768px) {
+
+  .calendar-day {
+    min-height: 80px;
+    font-size: 12px;
+  }
+
+  .calendar-task {
+    font-size: 10px;
+  }
+}
+
+/* 今日の日 */
+.today {
+  background-color: #d9d9d9;
+  border: 2px solid #888;
+}
+
+/* 完了課題 */
+.completed-task {
+  background-color: #cfcfcf;
+  color: #666;
+  text-decoration: line-through;
+}
+
+/* 曜日色 */
+.sunday {
+  color: red;
+}
+
+.saturday {
+  color: blue;
+}
+
+/* 日曜マス */
+.sunday-day {
+  background-color: #ffe5e5;
+}
+
+/* 土曜マス */
+.saturday-day {
+  background-color: #e5eeff;
+}
+
+/* 課題詳細 */
+.task-detail {
+  background: white;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: left;
+  border: 2px solid #ddd;
+}
+
+.detail-task {
+  background: #f3f3f3;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
 /* ===== スマホ対応 ===== */
-@media (max-width: 430px) {
+@media (max-width: 768px) {
 
   body {
     margin: 5px;
@@ -340,10 +370,9 @@ button {
   /* マスを小さく */
   th,
   td {
-    width: 45px;
-    min-width: 45px;
-    height: 30px;
-    font-size: 10px;
+    width: 125px;
+    min-width: 125px;
+    height: 180px;
     padding: 2px;
   }
 
@@ -400,23 +429,6 @@ button {
     font-size: 10px;
     padding: 4px;
   }
-}
-
-/* スマホで曜日・何限を小さく */
-#timetable th {
-  width: 40px;
-  min-width: 40px;
-  height: 28px;
-
-  font-size: 10px;
-  padding: 2px;
-}
-
-/* スマホで課題マス */
-#timetable td {
-  width: 110px;
-  min-width: 110px;
-  height: 165px;
 }
 
 /* ===== カレンダー曜日 ===== */
