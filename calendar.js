@@ -23,6 +23,13 @@ function getAllTasks() {
 
     for (let j = 0; j < 5; j++) {
 
+      // 授業名取得
+      const subject =
+        localStorage.getItem(
+          `subject-${i}-${j}`
+        ) || "授業名なし";
+
+      // 課題取得
       const saved =
         JSON.parse(
           localStorage.getItem(
@@ -30,7 +37,15 @@ function getAllTasks() {
           ) || "[]"
         );
 
-      tasks.push(...saved);
+      // 授業名を追加
+      saved.forEach(task => {
+
+        tasks.push({
+          ...task,
+          subject: subject
+        });
+
+      });
     }
   }
 
@@ -104,19 +119,19 @@ function renderCalendar() {
 
     dayBox.className =
       "calendar-day";
-     // 日曜
-     const dayOfWeek =
+    // 日曜
+    const dayOfWeek =
       new Date(year, month, day)
         .getDay();
 
-     if (dayOfWeek === 0) {
+    if (dayOfWeek === 0) {
       dayBox.classList.add("sunday-day");
-     }
+    }
 
-     // 土曜
-     if (dayOfWeek === 6) {
+    // 土曜
+    if (dayOfWeek === 6) {
       dayBox.classList.add("saturday-day");
-     }
+    }
 
     const today = new Date();
 
@@ -157,7 +172,7 @@ function renderCalendar() {
           "calendar-task";
 
         taskDiv.textContent =
-          task.name;
+          `${task.name}（${task.subject}）`;
         if (task.completed) {
           taskDiv.classList.add("completed-task");
         }
@@ -167,46 +182,49 @@ function renderCalendar() {
     });
 
     // 日付クリック
-dayBox.onclick = () => {
+    dayBox.onclick = () => {
 
-  const dayTasks =
-    tasks.filter(task => {
+      const dayTasks =
+        tasks.filter(task => {
 
-      const deadline =
-        new Date(task.deadline);
+          const deadline =
+            new Date(task.deadline);
 
-      return (
-        deadline.getFullYear() === year &&
-        deadline.getMonth() === month &&
-        deadline.getDate() === day
-      );
-    });
+          return (
+            deadline.getFullYear() === year &&
+            deadline.getMonth() === month &&
+            deadline.getDate() === day
+          );
+        });
 
-  if (dayTasks.length === 0) {
+      if (dayTasks.length === 0) {
 
-    taskDetail.innerHTML =
-      `<h3>${month + 1}月${day}日</h3>
+        taskDetail.innerHTML =
+          `<h3>${month + 1}月${day}日</h3>
        <p>課題なし</p>`;
 
-    return;
-  }
+        return;
+      }
 
-  let html =
-    `<h3>${month + 1}月${day}日</h3>`;
+      let html =
+        `<h3>${month + 1}月${day}日</h3>`;
 
-  dayTasks.forEach(task => {
+      dayTasks.forEach(task => {
 
-    html += `
+        html += `
       <div class="detail-task">
-        <strong>${task.name}</strong><br>
+        <strong>
+        ${task.name}
+       （${task.subject}）
+        </strong><br>
         締切：
         ${task.deadline.replace("T", " ")}
       </div>
     `;
-  });
+      });
 
-  taskDetail.innerHTML = html;
-};
+      taskDetail.innerHTML = html;
+    };
 
     calendar.appendChild(dayBox);
   }
